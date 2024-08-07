@@ -16,6 +16,10 @@ Route::get('/jalur', function () {
     return view('jalur');
 });
 
+Route::get('/gagal', function () {
+    return view('gagal');
+});
+
 Route::get('/biaya', function () {
     return view('biaya');
 });

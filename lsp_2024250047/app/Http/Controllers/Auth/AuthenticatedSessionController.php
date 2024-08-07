@@ -43,7 +43,7 @@ class AuthenticatedSessionController extends Controller
 
             $request->session()->regenerateToken();
 
-            return redirect('/login')->with('error', 'Akun anda belum aktif');
+            return redirect('/gagal')->with('error', 'Login Gagal dikarenakan akun anda belum aktif, tunggu admin memverifikasi akun anda terlebih dahulu agar bisa digunakan');
         }
 
     }
