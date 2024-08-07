@@ -79,11 +79,18 @@
                 </div>
             </div>
 
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <!-- Nama Depan -->
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700">Jalur Masuk</label>
+                    <p class="mt-1 text-gray-900">{{ $daftarmahasiswa->entry_path }}</p>
+                </div>
 
-            <!-- Jalur Masuk -->
-            <div class="mb-6">
-                <label class="block text-sm font-semibold text-gray-700">Jalur Masuk</label>
-                <p class="mt-1 text-gray-900">{{ $daftarmahasiswa->entry_path }}</p>
+                <!-- Nama Belakang -->
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700">Status Pendaftaran</label>
+                    <p class="mt-1 text-gray-900">{{ $user->status }}</p>
+                </div>
             </div>
 
             <label class="mb-3 block text-center text-sm font-semibold text-gray-700">Bukti Pembayaran</label>

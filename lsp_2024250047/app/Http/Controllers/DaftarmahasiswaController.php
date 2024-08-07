@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Daftarmahasiswa;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -113,7 +114,14 @@ class DaftarmahasiswaController extends Controller
     }
         public function show()
     {
-        $daftarmahasiswa = Daftarmahasiswa::where('user_id',Auth::user()->id)->first();
+        $daftarmahasiswa = Daftarmahasiswa::where('user_id', Auth::user()->id)->first();
+        $user = User::find($daftarmahasiswa->user_id); // Ambil data pengguna berdasarkan user_id dari Daftarmahasiswa
+
+        // Kirim data pengguna dan pendaftaran mahasiswa ke view
+        return view('mahasiswa.daftarmahasiswa.show', [
+            'daftarmahasiswa' => $daftarmahasiswa,
+            'user' => $user
+        ]);
         return view('mahasiswa.daftarmahasiswa.show', compact('daftarmahasiswa'));
     }
 

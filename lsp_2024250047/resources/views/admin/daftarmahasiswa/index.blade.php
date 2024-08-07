@@ -52,6 +52,7 @@
                         <th class="px-4 py-2 border-b">Program Studi</th>
                         <th class="px-4 py-2 border-b">Jalur Masuk</th>
                         <th class="px-4 py-2 border-b">Bukti Pembayaran</th>
+                        <th class="px-4 py-2 border-b">Status</th>
                         <th class="px-4 py-2 border-b">Aksi</th>
                     </tr>
                 </thead>
