@@ -21,12 +21,16 @@
             <div class="border-t border-gray-300 my-3"></div>
             <p class="text-gray-700 mb-4">{{ $p->deskripsi_pengumuman }}</p>
             <div class="flex justify-end space-x-4">
-                <a href="/admin/pengumuman/{{$p->id}}/edit" class="text-blue-500 hover:underline">Edit</a>
-                <form action="/admin/pengumuman/{{ $p->id }}" method="POST" class="inline">
-                    @method('DELETE')
-                    @csrf
-                    <button type="submit" class="text-red-500 hover:underline">Delete</button>
-                </form>
+                @auth
+                    @if(Auth::user()->role == 'admin') 
+                        <a href="/admin/pengumuman/{{$p->id}}/edit" class="text-blue-500 hover:underline">Edit</a>
+                        <form action="/admin/pengumuman/{{ $p->id }}" method="POST" class="inline">
+                            @method('DELETE')
+                            @csrf
+                            <button type="submit" class="text-red-500 hover:underline">Delete</button>
+                        </form>
+                    @endif
+                @endauth
             </div>
         </div>
     </div>
