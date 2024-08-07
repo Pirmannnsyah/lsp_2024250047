@@ -8,6 +8,9 @@
 </head>
 <body class="bg-gray-100 h-screen flex items-center justify-center">
     <div class="w-2/5 p-6 bg-white shadow-md rounded">
+    <a class="text-sm text-blue-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="/admin/dashboard">
+                    Back
+            </a>
         <h1 class="text-2xl font-bold mb-4">Create Pengumuman</h1>
         <form action="/admin/pengumuman/store" method="POST">
             {{ csrf_field() }}

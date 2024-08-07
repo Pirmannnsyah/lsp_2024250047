@@ -60,6 +60,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/mahasiswa/daftarmahasiswa', [DaftarmahasiswaController::class, 'store']);
     Route::get('/admin/daftarmahasiswa/{id}/edit', [DaftarmahasiswaController::class, 'edit']);
     Route::put('/admin/daftarmahasiswa/{id}', [DaftarmahasiswaController::class, 'update']);
+    Route::delete('/admin/daftarmahasiswa/{id}', [DaftarmahasiswaController::class,'destroy']);
 });
 
 Route::get('/pengumuman', [PengumumanController::class,'index']);

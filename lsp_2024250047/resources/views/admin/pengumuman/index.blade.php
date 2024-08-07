@@ -20,15 +20,17 @@
             <h2 class="text-xl font-bold text-gray-800 mb-2">{{ $p->judul_pengumuman }}</h2>
             <div class="border-t border-gray-300 my-3"></div>
             <p class="text-gray-700 mb-4">{{ $p->deskripsi_pengumuman }}</p>
-            <div class="flex justify-end space-x-4">
+            <div class="flex justify-end space-x-6">
                 @auth
                     @if(Auth::user()->role == 'admin') 
+                        <a href="/admin/pengumuman/create" class="text-green-500 hover:underline">Tambah</a>
                         <a href="/admin/pengumuman/{{$p->id}}/edit" class="text-blue-500 hover:underline">Edit</a>
                         <form action="/admin/pengumuman/{{ $p->id }}" method="POST" class="inline">
                             @method('DELETE')
                             @csrf
                             <button type="submit" class="text-red-500 hover:underline">Delete</button>
                         </form>
+                        <a href="/admin/dashboard" class="mx-2 text-purple-800 hover:underline">Home</a>
                     @endif
                 @endauth
             </div>

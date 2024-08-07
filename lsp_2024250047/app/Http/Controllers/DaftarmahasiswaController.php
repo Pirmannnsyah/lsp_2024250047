@@ -116,4 +116,21 @@ class DaftarmahasiswaController extends Controller
         $daftarmahasiswa = Daftarmahasiswa::where('user_id',Auth::user()->id)->first();
         return view('mahasiswa.daftarmahasiswa.show', compact('daftarmahasiswa'));
     }
+
+    public function destroy($id)
+    {
+        // Find the Daftarmahasiswa record by ID
+        $daftarmahasiswa = Daftarmahasiswa::findOrFail($id);
+
+        // Delete the payment proof file if it exists
+        if ($daftarmahasiswa->payment_proof) {
+            Storage::disk('public')->delete($daftarmahasiswa->payment_proof);
+        }
+
+        // Delete the Daftarmahasiswa record
+        $daftarmahasiswa->delete();
+
+        // Redirect back to the index page with a success message
+        return redirect()->intended('/admin/daftarmahasiswa')->with('success', 'Data pendaftaran berhasil dihapus!');
+    }
 }
