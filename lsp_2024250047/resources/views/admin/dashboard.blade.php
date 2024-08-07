@@ -18,8 +18,8 @@
                     </a>
 
                     <!-- Button Verifikasi Pendaftaran Mahasiswa -->
-                    <a href="{{ route('admin.verifikasi_pendaftaran') }}" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
-                        Verifikasi Pendaftaran Mahasiswa
+                    <a href="/admin/daftarmahasiswa" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                        Data Mahasiswa
                     </a>
                 </div>
             </div>
