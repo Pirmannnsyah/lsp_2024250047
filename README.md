@@ -15,3 +15,6 @@ Univ Terbuka adalah aplikasi web yang dibangun untuk memudahkan proses pendaftar
 - **Tailwind CSS**: Framework CSS yang digunakan untuk desain antarmuka yang modern dan responsif.
 - **Blade Templating**: Digunakan untuk membuat tampilan halaman yang dinamis dan mudah dikelola.
 
+## Developer
+- [Muhammad Firmansyah](https://github.com/Pirmannnsyah) - 2024250047 - Informatika
+- Bidang = Pengembang Web
