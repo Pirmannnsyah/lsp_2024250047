@@ -23,8 +23,7 @@ Univ Terbuka adalah aplikasi web yang dibangun untuk memudahkan proses pendaftar
 - Clone repository ke folder lokal
 - Buat database *lsp_2024250047* di server MySQL localhost
 - Jalankan command:
-
-- composer install
+- ```composer install```
 - php artisan migrate
 - php artisan db:seed
 - php artisan serve
