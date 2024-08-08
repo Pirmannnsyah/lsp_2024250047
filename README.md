@@ -18,3 +18,18 @@ Univ Terbuka adalah aplikasi web yang dibangun untuk memudahkan proses pendaftar
 ## Developer
 - [Muhammad Firmansyah](https://github.com/Pirmannnsyah) - 2024250047 - Informatika
 - Bidang = Pengembang Web
+
+## cara menjalankan
+- Clone repository ke folder lokal
+- Buat database *lsp_2024250047* di server MySQL localhost
+- Jalankan command:
+
+composer install
+php artisan migrate
+php artisan db:seed
+php artisan serve
+
+npm install
+npm run dev
+
+
