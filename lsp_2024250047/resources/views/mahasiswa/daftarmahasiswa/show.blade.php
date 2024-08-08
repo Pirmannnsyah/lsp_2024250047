@@ -89,7 +89,7 @@
                 <!-- Nama Belakang -->
                 <div>
                     <label class="block text-sm font-semibold text-gray-700">Status Pendaftaran</label>
-                    <p class="mt-1 text-gray-900">{{ $user->status }}</p>
+                    <p class="mt-1 text-gray-900">{{ $daftarmahasiswa->status }}</p>
                 </div>
             </div>
 

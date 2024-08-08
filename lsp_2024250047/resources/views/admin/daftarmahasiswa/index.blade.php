@@ -75,12 +75,21 @@
                                     Tidak ada
                                 @endif
                             </td>
+                            <td>
+                                {{($d->status)}}
+                            </div>
                             <td class="px-4 py-2 border-b">
                                 <a href="/admin/daftarmahasiswa/{{$d->id}}/edit" class="text-blue-500 hover:underline">Edit</a>
                                 <form action="/admin/daftarmahasiswa/{{ $d->id }}" method="POST" class="inline">
                                 @method('DELETE')
                                 @csrf
                                 <button type="submit" class="text-red-500 hover:underline">Delete</button>
+                                <form action="{{ route('mahasiswa.validate_admin', $d->id) }}" method="POST" class="inline-flex items-center">
+                                @csrf
+                                @method('PATCH')
+                                <button type="submit" class="inline-flex items-center m-2 px-4 py-2 text-sm font-medium text-center text-green-600 ">
+                                    Terima
+                                </button>
                         </form>
                             </td>
                         </tr>

@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Daftarmahasiswa extends Model
 {
     protected $table = 'daftarmahasiswa';
+    protected $primaryKey = 'id';
 
     // Kolom yang bisa diisi secara massal
     protected $fillable = [
@@ -20,6 +21,7 @@ class Daftarmahasiswa extends Model
         'program_study',
         'entry_path',
         'payment_proof',
+        'status'
     ];
 
     // Kolom yang diperlakukan sebagai tanggal

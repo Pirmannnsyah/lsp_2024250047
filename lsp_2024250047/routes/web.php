@@ -54,6 +54,7 @@ Route::middleware('auth')->group(function () {
     Route::put('/admin/pengumuman/{id}', [PengumumanController::class,'update']);
     Route::delete('/admin/pengumuman/{id}', [PengumumanController::class,'destroy']);
 
+    Route::patch('/admin/daftarmahasiswa/{id}', [DaftarmahasiswaController::class, 'validationAdmin'])->name('mahasiswa.validate_admin');
     Route::get('/admin/daftarmahasiswa', [DaftarmahasiswaController::class, 'index']);
     Route::get('/mahasiswa/daftarmahasiswa/show', [DaftarmahasiswaController::class, 'show']);
     Route::get('/mahasiswa/daftarmahasiswa/create', [DaftarmahasiswaController::class, 'create']);

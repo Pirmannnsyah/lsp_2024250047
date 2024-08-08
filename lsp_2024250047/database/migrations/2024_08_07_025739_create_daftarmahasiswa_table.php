@@ -22,7 +22,8 @@ return new class extends Migration
             $table->text('address');
             $table->string('program_study');
             $table->string('entry_path');
-            $table->string('payment_proof'); // Assuming this is the file path or URL
+            $table->string('payment_proof'); 
+            $table->enum('status', ['diterima','pending','ditolak']);// Assuming this is the file path or URL
             $table->timestamps();
         });
     }

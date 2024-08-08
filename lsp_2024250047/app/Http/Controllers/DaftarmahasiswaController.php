@@ -58,6 +58,7 @@ class DaftarmahasiswaController extends Controller
             'program_study' => $request->input('program_study'),
             'entry_path' => $request->input('entry_path'),
             'payment_proof' => $filePath ?? null,
+            'status' => 'pending',
         ]);
 
         return redirect()->intended('/mahasiswa/dashboard')->with('success', 'Pendaftaran berhasil!');
@@ -141,4 +142,22 @@ class DaftarmahasiswaController extends Controller
         // Redirect back to the index page with a success message
         return redirect()->intended('/admin/daftarmahasiswa')->with('success', 'Data pendaftaran berhasil dihapus!');
     }
+
+    public function validationAdmin(Request $request, string $id)
+    {
+        // Mencari data mahasiswa berdasarkan ID
+        $daftarmahasiswa = Daftarmahasiswa::find($id);
+
+        // Memastikan data mahasiswa ditemukan
+        if (!$daftarmahasiswa) {
+            return redirect()->back()->withErrors(['error' => 'Mahasiswa tidak ditemukan']);
+        }
+
+        // Memperbarui status menjadi 'Diterima'
+        $daftarmahasiswa->status = 'diterima';
+        $daftarmahasiswa->save();
+
+        return redirect()->back()->with('success', 'Mahasiswa telah diterima');
+    }
+
 }
